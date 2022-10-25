@@ -27,7 +27,7 @@ namespace ToolsAndMechanics.Tweens
 
             if (useLocalSpace)
             {
-                currTween = target.DOLocalMove(straight ? endPosition : startPosition, duration).
+                currTween = Target.DOLocalMove(straight ? endPosition : startPosition, duration).
                     SetEase(easeType).
                     SetLoops(loopCount, loopType).
                     SetUpdate(ignoreTimeScale).
@@ -36,7 +36,7 @@ namespace ToolsAndMechanics.Tweens
             }
             else
             {
-                currTween = target.DOMove(straight ? endPosition : startPosition, duration).
+                currTween = Target.DOMove(straight ? endPosition : startPosition, duration).
                     SetEase(easeType).
                     SetLoops(loopCount, loopType).
                     SetUpdate(ignoreTimeScale).
@@ -49,11 +49,11 @@ namespace ToolsAndMechanics.Tweens
         {
             if (useLocalSpace)
             {
-                target.localPosition = straight ? startPosition : endPosition;
+                Target.localPosition = straight ? startPosition : endPosition;
             }
             else
             {
-                target.position = straight ? startPosition : endPosition;
+                Target.position = straight ? startPosition : endPosition;
             }
         }
     }

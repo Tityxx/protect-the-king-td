@@ -13,10 +13,16 @@ namespace ToolsAndMechanics.Tweens
         private float startAlpha;
         [SerializeField]
         private float endAlpha;
-        [SerializeField]
+
         private Image image;
-        [SerializeField]
         private SpriteRenderer sprite;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            image = Target.GetComponent<Image>();
+            sprite = Target.GetComponent<SpriteRenderer>();
+        }
 
         public override void Execute(bool straight = true)
         {

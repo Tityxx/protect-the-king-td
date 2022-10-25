@@ -11,7 +11,7 @@ namespace ToolsAndMechanics.Tweens
         [SerializeField]
         private Vector2 endPosition;
 
-        private RectTransform rect => target as RectTransform;
+        private RectTransform rect => Target as RectTransform;
 
         public override void Execute(bool straight = true)
         {

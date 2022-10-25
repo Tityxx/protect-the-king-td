@@ -24,8 +24,8 @@ namespace ToolsAndMechanics.Tweens
         {
             base.Awake();
 
-            startPosition = target.position;
-            startRotation = target.rotation;
+            startPosition = Target.position;
+            startRotation = Target.rotation;
 
             foreach (Transform t in path)
             {
@@ -44,7 +44,7 @@ namespace ToolsAndMechanics.Tweens
 
             base.Execute(straight);
 
-            currTween = target.DOPath(straight ? pathPos.ToArray() : pathPosReverse.ToArray(), duration, pathType, pathMode).
+            currTween = Target.DOPath(straight ? pathPos.ToArray() : pathPosReverse.ToArray(), duration, pathType, pathMode).
                 SetEase(easeType).
                 SetLoops(loopCount, loopType).
                 SetUpdate(ignoreTimeScale).
@@ -54,8 +54,8 @@ namespace ToolsAndMechanics.Tweens
 
         protected override void ResetValue(bool straight = true)
         {
-            target.position = startPosition;
-            target.rotation = startRotation;
+            Target.position = startPosition;
+            Target.rotation = startRotation;
         }
     }
 }

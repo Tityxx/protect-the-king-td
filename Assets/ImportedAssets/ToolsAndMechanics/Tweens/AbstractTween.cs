@@ -10,6 +10,13 @@ namespace ToolsAndMechanics.Tweens
         public UnityEvent onComplete;
 
         public bool IsCompleted { get; protected set; }
+        public Transform Target
+        {
+            get
+            {
+                return target == null ? transform : target;
+            }
+        }
 
         [SerializeField]
         protected bool ignoreTimeScale;
@@ -39,7 +46,6 @@ namespace ToolsAndMechanics.Tweens
 
         protected virtual void Awake()
         {
-            target ??= transform;
             if (overrideValueOnStart)
             {
                 ResetValue();
